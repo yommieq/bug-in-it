@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+    <link rel="icon" type="image/x-icon" href="default-favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,700;0,800;1,700&display=swap" rel="stylesheet">
+</head>
+    <title>Document</title>
+    <style>
+        body{
+            font-family: 'Open Sans', sans-serif;
+        }
+        main{
+            display: flex;
+            justify-content: center;
+        }
+        img[src="whattimern.png"]{
+            height: 200px;
+        }
+        .grid-time{
+            display: grid;
+            grid-template-columns: 1fr;
+            grid-template-rows: 1fr 1fr 1fr;
+            text-align: center;
+        }
+        .lond{
+            display: flex;
+            justify-content: center;
+            gap: 3px;
+            margin-top: 10px;
+        }
+        .coln{
+            font-size: 50px;
+            font-weight: 400;
+        }
+        .blvk{
+            background: linear-gradient(#3b3b3b, black );
+            color: white;
+            padding: 4px 6px;
+            border-radius: 7px;
+        }
+        .seconds{
+            background:linear-gradient(rgb(238, 238, 238),lightgrey);
+            padding: 4px 6px;
+            border-radius: 7px;
+        }
+        .timampm{
+            padding-top: 12px;
+            font-size: 42px;
+            color: grey;
+        }
+        .string-lon-time{
+            color: grey;
+            font-size: 20px;
+        }
+        .sec-lon-text{
+            color: black;
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+        .divniggg{
+            overflow-y: scroll;
+            height: 110px;
+        }
+    </style>
+</head>
+<body>
+    <main id="main-prnt">
+        
+    </main>
+    <script type="text/babel">
+        
+    /*    function dtefunc(){
+        var dte = new Date()
+        var cgh=dte.getHours()+6
+        if(cgh>24){
+            var newcg= cgh%24
+            document.getElementsByTaName("div")[0].innerHTML=newcg + ":" + dte.getMinutes()+":"+dte.getSeconds()
+        }
+
+        document.getElementsByTaName("div")[0].innerHTML=dte.getHours()+ ":" + dte.getMinutes()+":"+dte.getSeconds()
+        }
+        setInterval(dtefunc, 1000)
+ */
+        
+        function Sec(){
+            return(
+            <div className="grid-time">
+                <div className="sec-los">
+                <div className="sec-los-text">LOS ANGELES</div>
+                <div className="los-divniggg">
+                <div className="string-los-time"></div>
+                    <div className="los-a">
+                        <div className="los-hour coln blvk"></div>
+                        <div className="coln">:</div>
+                        <div className="los-mins coln blvk"></div>
+                        <div className="coln">:</div>
+                        <div className="los-seconds coln"></div>
+                        <div className="los-timampm coln"></div>
+                    </div>
+                </div>
+            </div>
+
+                <div className="sec-lon">
+                    <div className="sec-lon-text">LONDON</div>
+                    <div className="divniggg">
+                    <div className="string-lon-time"></div>
+                        <div className="lond">
+                            <div className="hour coln blvk"></div>
+                            <div className="coln">:</div>
+                            <div className="mins coln blvk"></div>
+                            <div className="coln">:</div>
+                            <div className="seconds coln"></div>
+                            <div className="timampm coln"></div>
+                        </div>
+                    </div>
+            </div>
+                <div className="hong-kon">i</div>
+                <div className="nga">i</div>
+             </div>
+            )
+        }
+        function latim(){
+            var los= new Date()
+            var loshour= los.getHours()-9
+                function s4econds(){
+                    if(los.getSeconds()<=9){
+                        return "0"+los.getSeconds()
+                    }
+                    else{
+                        return los.getSeconds()
+                    }
+                }
+                function min33(){
+                    if(los.getMinutes()<=9){
+                        return "0"+los.getMinutes()
+                    }
+                    else{
+                        return los.getMinutes()
+                    }
+                }
+                function hou9(){
+                    if(loshour<10){
+                        return "0"+loshour
+                    }
+                    else{
+                        return loshour
+                    }
+            }
+            var stringTm_los= document.getElementsByClassName("los-hour")[0]
+            stringTm_los.innerHTML=los.toDateString();
+        if(loshour<0){
+            var los_new= 24+(loshour)
+            function hou9(){
+                if(los_new<10){
+                    return "0"+los_new
+                }
+                else{
+                    return los_new
+                }
+            }
+            document.getElementsByClassName("hour")[0].innerHTML=los_new
+        }
+        else{
+            document.getElementsByClassName("hour")[0].innerHTML=hou9()
+        }
+        document.getElementsByClassName("mins")[0].innerHTML=min33()
+        document.getElementsByClassName("seconds")[0].innerHTML=s4econds()
+        document.getElementsByClassName("los-timampm")[0].innerHTML=losn()
+        document.getElementsByClassName("string-lon-time")[0].innerHTML=los.toDateString();
+        function losn(){
+            var losng= 24+(loshour)
+            if(Number(losng||loshour)<12){
+                return "a.m."
+            }
+            else{
+                return "p.m."
+            }
+        }
+        var londnhr=los.getHours()-1;
+         function hou1(){
+                if(londnhr<10){
+                    return "0"+londnhr
+                }
+                else{
+                    return londnhr
+                }
+            }
+        if(londnhr<0){
+            var lonneg= 24+(londnhr)
+            function hou1(){
+                if(lonneg<10){
+                    return "0"+lonneg
+                }
+                else{
+                    return lonneg
+                }
+            }
+
+            document.getElementsByClassName("hour")[0].innerHTML=lonneg
+        }
+        else{
+            document.getElementsByClassName("hour")[0].innerHTML=hou1()
+        }
+        document.getElementsByClassName("mins")[0].innerHTML=min33()
+        document.getElementsByClassName("seconds")[0].innerHTML=s4econds()
+        document.getElementsByClassName("timampm")[0].innerHTML=ron()
+        document.getElementsByClassName("string-lon-time")[0].innerHTML=los.toDateString();
+        function ron(){
+            var lonng= 24+(londnhr)
+            if(Number(londnhr||lonng)<12){
+                return "a.m."
+            }
+            else{
+                return "p.m."
+            }
+        }
+    }
+        setInterval(latim, 1000)
+        function Nav(){
+            return(
+                <img src="whattimern.png"/>
+            )
+        }
+        ReactDOM.render(
+        <div>    
+        <Nav/>
+        <Sec/>
+        </div>
+            , 
+            document.getElementById("main-prnt")
+        )
+    </script>
+</body>
+</html>
